@@ -28,4 +28,5 @@ composer install
 
 ```
 composer require --dev behat/behat
+composer require --dev phpunit/phpunit
 ```
