@@ -1,44 +1,59 @@
 <?php
 
 use Behat\Behat\Tester\Exception\PendingException;
-use Behat\Behat\Context\Context;
+use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext implements Context
+class FeatureContext implements SnippetAcceptingContext
 {
-    /**
-     * @Given there is a :arg1, which costs £:arg2
-     */
-    public function thereIsAWhichCostsPs($arg1, $arg2)
+    private $shelf;
+    private $basket;
+
+    public function __construct()
     {
-        throw new PendingException();
+        $this->shelf = new Shelf();
+        $this->basket = new Basket($this->shelf);
     }
 
     /**
-     * @When I add the :arg1 to the basket
+     * @Given there is a :product, which costs £:price
      */
-    public function iAddTheToTheBasket($arg1)
+    public function thereIsAWhichCostsPs($product, $price)
     {
-        throw new PendingException();
+        $this->shelf->setProductPrice($product, floatval($price));
     }
 
     /**
-     * @Then I should have :arg1 product(s) in the basket
+     * @When I add the :product to the basket
      */
-    public function iShouldHaveProductInTheBasket($arg1)
+    public function iAddTheToTheBasket($product)
     {
-        throw new PendingException();
+        $this->basket->addProduct($product);
     }
 
     /**
-     * @Then the overall basket price should be £:arg1
+     * @Then I should have :count product(s) in the basket
      */
-    public function theOverallBasketPriceShouldBePs($arg1)
+    public function iShouldHaveProductInTheBasket($count)
     {
-        throw new PendingException();
+        PHPUnit\Framework\Assert::assertCount(
+            intval($count),
+            $this->basket
+        );
+    }
+
+    /**
+     * @Then the overall basket price should be £:price
+     */
+    public function theOverallBasketPriceShouldBePs($price)
+    {
+        PHPUnit\Framework\Assert::assertSame(
+            floatval($price),
+            $this->basket->getTotalPrice()
+        );
     }
 }
