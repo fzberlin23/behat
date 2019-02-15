@@ -36,6 +36,14 @@ class FeatureContext implements SnippetAcceptingContext
     }
 
     /**
+     * @When I redeem a £:couponValue coupon
+     */
+    public function iRedeemAPsCoupon($couponValue)
+    {
+        $this->basket->redeemCoupon($couponValue);
+    }
+
+    /**
      * @Then I should have :count product(s) in the basket
      */
     public function iShouldHaveProductInTheBasket($count)

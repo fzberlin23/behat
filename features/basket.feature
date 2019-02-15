@@ -28,8 +28,15 @@ Feature: Product basket
         Then I should have 2 products in the basket
         And the overall basket price should be £20
 
-    Scenario: Buying a single product under £10
+    Scenario: Buying a single complimentary product
         Given there is a "Complimentary Star wars book", which costs £0
         When I add the "Complimentary Star wars book" to the basket
         Then I should have 1 product in the basket
         And the overall basket price should be £3
+
+    Scenario: Buying a single product under £10 with a £5 coupon
+        Given there is a "Special book about star wars", which costs £8
+        When I add the "Special book about star wars" to the basket
+        And I redeem a £5 coupon
+        Then I should have 1 product in the basket
+        And the overall basket price should be £7.6
