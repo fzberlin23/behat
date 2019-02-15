@@ -11,13 +11,13 @@ final class Basket implements \Countable
         $this->shelf = $shelf;
     }
 
-    public function addProduct($product)
+    public function addProduct(string $product)
     {
         $this->products[] = $product;
         $this->productsPrice += $this->shelf->getProductPrice($product);
     }
 
-    public function getTotalPrice()
+    public function getTotalPrice(): float
     {
         return
             $this->productsPrice +
@@ -25,7 +25,7 @@ final class Basket implements \Countable
             ($this->productsPrice > 10 ? 2.0 : 3.0);
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->products);
     }
