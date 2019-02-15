@@ -1,0 +1,10 @@
+version: "3"
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    image: behat-image
+    container_name: behat
+    volumes:
+      - /Users/fabian/projects/behat:/var/www/html:cached
