@@ -25,11 +25,15 @@ final class Basket implements \Countable
 
     public function getTotalPrice(): float
     {
-        return
+        $totalPrice =
             $this->productsPrice +
             ($this->productsPrice * 0.2) -
-            ($this->couponValue) +
-            ($this->productsPrice > 10 ? 2.0 : 3.0);
+            $this->couponValue;
+
+        $totalPrice = $totalPrice < 0 ? 0 : $totalPrice;
+        $totalPrice += ($totalPrice > 10) ? 2.0 : 3.0;
+
+        return $totalPrice;
     }
 
     public function count(): int

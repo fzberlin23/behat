@@ -40,3 +40,10 @@ Feature: Product basket
         And I redeem a £5 coupon
         Then I should have 1 product in the basket
         And the overall basket price should be £7.6
+
+    Scenario: Buying a single product for £3 with a £5 coupon
+        Given there is a "Jamie Oliver Cookbook", which costs £3
+        When I add the "Jamie Oliver Cookbook" to the basket
+        And I redeem a £5 coupon
+        Then I should have 1 product in the basket
+        And the overall basket price should be £3
