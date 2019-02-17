@@ -29,4 +29,7 @@ composer install
 ```
 composer require --dev behat/behat
 composer require --dev phpunit/phpunit
+composer require --dev behat/mink-extension
+composer require --dev behat/mink-goutte-driver
+composer require --dev behat/mink-selenium2-driver
 ```
