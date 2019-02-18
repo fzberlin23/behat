@@ -1,14 +1,11 @@
 <?php
 
-use Behat\Behat\Tester\Exception\PendingException;
-use Behat\Behat\Context\SnippetAcceptingContext;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
+use Behat\Behat\Context\Context;
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext implements SnippetAcceptingContext
+class BasketContext implements Context
 {
     private $shelf;
     private $basket;

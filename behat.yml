@@ -4,3 +4,10 @@ default:
             base_url: http://en.wikipedia.org
             goutte: ~
             selenium2: ~
+    suites:
+        basket:
+            paths:    [ '%paths.base%/features/basket' ]
+            contexts: [ BasketContext ]
+        wikipedia:
+            paths:    [ '%paths.base%/features/wikipedia' ]
+            contexts: [ WikipediaContext ]
