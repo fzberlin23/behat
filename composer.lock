@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a5ccbfcb89544ffdb2819f4c73fcaf3",
+    "content-hash": "495868440407438b43384db308c5620d",
     "packages": [],
     "packages-dev": [
         {
@@ -1696,6 +1696,49 @@
             ],
             "description": "A polyfill for getallheaders.",
             "time": "2016-02-11T07:05:27+00:00"
+        },
+        {
+            "name": "se/selenium-server-standalone",
+            "version": "3.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sveneisenschmidt/selenium-server-standalone.git",
+                "reference": "d7d43f1c3e6c4c7c2c8df3f552c511ee4c184e21"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sveneisenschmidt/selenium-server-standalone/zipball/d7d43f1c3e6c4c7c2c8df3f552c511ee4c184e21",
+                "reference": "d7d43f1c3e6c4c7c2c8df3f552c511ee4c184e21",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/selenium-server-standalone"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sven Eisenschmidt",
+                    "email": "sven.eisenschmidt@gmail.com"
+                },
+                {
+                    "name": "James Titcumb",
+                    "email": "hello@jamestitcumb.com"
+                }
+            ],
+            "description": "Composer distribution of Selenium Server Standalone, the browser automation framework. Adds a executable to your composer bin directory.",
+            "homepage": "https://github.com/sveneisenschmidt/selenium-server-standalone",
+            "keywords": [
+                "selenium",
+                "testing"
+            ],
+            "time": "2018-05-29T09:51:15+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

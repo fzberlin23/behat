@@ -4,6 +4,7 @@ default:
             base_url: http://en.wikipedia.org
             goutte: ~
             selenium2: ~
+            browser_name: chrome
     suites:
         basket:
             paths:    [ '%paths.base%/features/basket' ]
