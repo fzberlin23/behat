@@ -18,7 +18,6 @@ docker + docker-compose
 
 ```
 git clone git@github.com:fzberlin23/behat.git .
-Modify docker-compose.yml and set the "volumes" path appropriately
 docker-compose up -d
 docker exec -it behat bash
 composer install
@@ -32,4 +31,10 @@ composer require --dev phpunit/phpunit
 composer require --dev behat/mink-extension
 composer require --dev behat/mink-goutte-driver
 composer require --dev behat/mink-selenium2-driver
+```
+
+### Starting behat tests
+
+```
+docker-compose -f docker-compose.yml -f docker-compose-oneshot.yml run --rm behat
 ```

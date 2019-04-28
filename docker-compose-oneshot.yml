@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  behat:
+    image: behat-image
+    cap_drop: [all]
+    working_dir: /var/www/html
+    entrypoint: vendor/bin/behat
+    volumes:
+      - .:/var/www/html:cached

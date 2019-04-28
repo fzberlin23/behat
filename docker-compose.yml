@@ -1,4 +1,5 @@
 version: "3"
+
 services:
   php:
     build:
@@ -7,4 +8,4 @@ services:
     image: behat-image
     container_name: behat
     volumes:
-      - /Users/fabian/projects/behat:/var/www/html:cached
+      - .:/var/www/html:cached
