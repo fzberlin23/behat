@@ -18,9 +18,13 @@ docker + docker-compose
 
 ```
 git clone git@github.com:fzberlin23/behat.git .
-docker-compose up -d
-docker exec -it behat bash
-composer install
+docker-compose -f docker-compose.yml -f docker-compose-oneshot.yml run --rm composer install
+```
+
+### Starting behat tests
+
+```
+docker-compose -f docker-compose.yml -f docker-compose-oneshot.yml run --rm behat
 ```
 
 ### Installing behat from scratch
@@ -31,10 +35,4 @@ composer require --dev phpunit/phpunit
 composer require --dev behat/mink-extension
 composer require --dev behat/mink-goutte-driver
 composer require --dev behat/mink-selenium2-driver
-```
-
-### Starting behat tests
-
-```
-docker-compose -f docker-compose.yml -f docker-compose-oneshot.yml run --rm behat
 ```
